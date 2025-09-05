@@ -212,11 +212,11 @@
   <section id="contactos" class="contact">
     <div class="containe">
       <h2 style="color: white;">Contacte-nos</h2>
-      <form id="form-contacto">
+      <form action="https://formspree.io/f/xnnbooek" id="form-contacto" method="post">
+        <input type="hidden" name="_next" value="/#contactos">
         <input name="nome" placeholder="Nome" required>
         <input name="email" type="email" placeholder="Email" required>
-
-        <!-- Dropdown Serviços de Interesse -->
+        
         <label for="servicos-interesse" style="color:white; margin-top:10px; display:block;">Serviços de Interesse</label>
         <select name="servicos" id="servicos-interesse" required style="padding:12px 14px; border-radius:10px; border:none; font-family:inherit; margin-bottom:15px;">
           <option value="" disabled selected>Selecione um serviço</option>

@@ -1,13 +1,6 @@
 // Atualizar ano no footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Formulário de contacto
-document.getElementById('form-contacto').addEventListener('submit', (e) => {
-  e.preventDefault();
-  document.getElementById('form-msg').textContent = 'Obrigado pelo contacto! Responderemos em breve.';
-  e.target.reset();
-});
-
 // Menu hambúrguer
 const hamburgerToggle = document.getElementById('hamburger-toggle');
 const navMenu = document.getElementById('nav-menu');
@@ -53,7 +46,7 @@ window.addEventListener('hashchange', setActiveLinkFromHash);
 const sections = document.querySelectorAll('section[id]');
 const observerOptions = {
   root: null,
-  rootMargin: '-50% 0px -50% 0px', // Ativar quando a seção ocupa o centro da tela
+  rootMargin: '-50% 0px -50% 0px',
   threshold: 0
 };
 
