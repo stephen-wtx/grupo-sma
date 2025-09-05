@@ -67,23 +67,39 @@ header {
   display: block;
 }
 
-nav {
+/* Animação de sublinhado centralizado na navbar */
+nav#nav-menu {
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 20px;
 }
 
-nav a {
-  color: var(--text);
-  text-decoration: none;
-  font-family: 'Poppins', sans-serif;
+nav#nav-menu a {
+  position: relative;
+  color: var(--primary);
+  font-size: 16px;
   font-weight: 700;
-  transition: .2s;
+  text-decoration: none;
+  padding: 6px 0;
+  transition: color 0.3s;
 }
 
-nav a:hover {
-  color: var(--primary);
+nav#nav-menu a:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 3px;
+  width: 0%;
+  background: var(--accent);
+  border-radius: 12px;
+  transition: all 0.4s ease;
+  transform: translateX(-50%);
+}
+
+nav#nav-menu a:hover:before,
+nav#nav-menu a.active:before {
+  width: 100%;
 }
 
 /* Hamburger menu */
@@ -124,7 +140,7 @@ nav a:hover {
 
 /* Estado ativo do hamburger (X) */
 .hamburger input:checked ~ span:nth-of-type(1) {
-  transform: rotate(45deg) translateY(10px);
+  transform: rotate(45deg) translate(6px, 6px);
 }
 
 .hamburger input:checked ~ span:nth-of-type(2) {
@@ -132,7 +148,7 @@ nav a:hover {
 }
 
 .hamburger input:checked ~ span:nth-of-type(3) {
-  transform: rotate(-45deg) translateY(-10px);
+  transform: rotate(-45deg) translate(6px, -6px);
 }
 
 /* Hero Section */
@@ -409,7 +425,7 @@ footer {
 .pub-card .categoria {
   display: inline-block;
   font-size: 20px;
-  color: #FFD100;  
+  color: #FFD100;
   font-weight: 700;
   margin-bottom: 8px;
 }
@@ -526,12 +542,12 @@ footer {
     display: block;
   }
 
-  nav {
+  nav#nav-menu {
     display: none;
     flex-direction: column;
     background: #fff;
     position: absolute;
-    top: 60px;
+    top: 100%;
     left: 0;
     right: 0;
     padding: 20px;
@@ -540,7 +556,8 @@ footer {
     z-index: 999;
   }
 
-  nav.active {
+  /* Exibir o nav quando a classe .active é adicionada pelo JavaScript */
+  nav#nav-menu.active {
     display: flex;
   }
 
@@ -549,7 +566,7 @@ footer {
     text-align: center;
   }
 
-  .about {
-    grid-template-columns: 1fr;
+    .about {
+      grid-template-columns: 1fr;
+    }
   }
-}
