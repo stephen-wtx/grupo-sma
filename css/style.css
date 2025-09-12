@@ -102,6 +102,11 @@ nav#nav-menu a.active:before {
   width: 100%;
 }
 
+#sobre p {
+  text-align: justify;
+}
+
+
 /* Hamburger menu */
 .hamburger {
   display: none;
@@ -219,6 +224,7 @@ h2 {
   color: var(--primary);
   text-align: center;
 }
+
 
 .grid {
   display: grid;
